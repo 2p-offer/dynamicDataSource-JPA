@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * @author 2p
  * @date 2021/9/8 17:40
- * @desc DynamicDataSource
+ * @desc 配置数据 数据源生成类
  */
 @Component
 public class DynamicDataSourceHolder {

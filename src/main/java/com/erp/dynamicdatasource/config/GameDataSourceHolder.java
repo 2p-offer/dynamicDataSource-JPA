@@ -36,6 +36,10 @@ public class GameDataSourceHolder {
     @Autowired
     private GsDbInfoRepository dbInfoRepository;
 
+    /**
+     * 创建game二级数据源，需要根据一级数据源 dynamicDataSource 查询的结果数据
+     * @return
+     */
     @Bean(name = "gameDataSource")
     public DynamicRoutingDataSource gameDataSource() {
 

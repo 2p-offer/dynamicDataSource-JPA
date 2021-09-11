@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * @author 2p
  * @date 2021/9/8 18:19
- * @desc EntityManagerConfig
+ * @desc jpa多数据源配置， 配置库数据源 entityManagerFactory生成类
  */
 @Component
 @EnableJpaRepositories(

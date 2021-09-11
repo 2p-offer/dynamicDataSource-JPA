@@ -14,7 +14,7 @@ import java.util.HashMap;
 /**
  * @author 2p
  * @date 2021/9/8 18:19
- * @desc EntityManagerConfig
+ * @desc  jpa多数据源配置， 游戏数据库数据源 entityManagerFactory生成类
  */
 @Component
 @EnableJpaRepositories(

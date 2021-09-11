@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * @author 2p
  * @date 2021/9/8 17:32
- * @desc DynamicRoutingDataSourceContext
+ * @desc 本来打算game和配置两个库的 数据源 key分开。后来想了下，并且测了下，没有必要分开的
  */
 public class GameRoutingDataSourceContext {
 
@@ -24,12 +24,6 @@ public class GameRoutingDataSourceContext {
 
     public static Object getRoutingDataSource() {
         Object dataSourceType = threadLocalDataSource.get();
-        //TODO  应该要有一个默认的,但是determineTargetDataSource离会有空转默认的判断
-//        if (dataSourceType == null) {
-//            threadLocalDataSource.set("abc");
-//            return getRoutingDataSource();
-//        }
-        // System.err.println(Thread.currentThread().getName()+" get RoutingDataSource : " + dataSourceType);
         return dataSourceType;
     }
 
