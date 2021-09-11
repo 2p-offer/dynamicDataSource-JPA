@@ -1,0 +1,44 @@
+server:
+  port: 8088
+
+datasource:
+  defaultdb: db1
+  dbInfos:
+    db1:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/dynamic_01?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&failOverReadOnly=false&serverTimezone=GMT%2B8&useSSL=false
+      username: root
+      password: root
+      dbname: firstdb
+    db2:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/dynamic_02?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&failOverReadOnly=false&serverTimezone=GMT%2B8&useSSL=false
+      username: root
+      password: root
+      dbname: seconddb
+  maiDbInfo:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dynamic_main?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&failOverReadOnly=false&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: root
+
+spring:
+  ## jpa??
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      #      naming:
+      ##  ?? entity?table?????????column????
+    #      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate.format_sql: false
+      ## hibernate entity ???
+      hibernate.enable_lazy_load_no_trans: true
+      ## entity ? table??sql???????????
+      hibernate.physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      hibernate.implicit_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    open-in-view: true
